@@ -6,7 +6,7 @@ from model import SimpleNN
 
 
 class DigitApp:
-    def __init__(self,model:SimpleNN, root:tk):
+    def __init__(self,model:SimpleNN, root:tk.Tk):
         self.model=model
         self.root = root
         self.root.title("MNIST Digit Tester")

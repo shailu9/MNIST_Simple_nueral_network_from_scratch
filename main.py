@@ -1,5 +1,4 @@
 import os
-
 import numpy as np
 import tkinter as tk
 from app import DigitApp
@@ -27,8 +26,8 @@ def main():
         "./weights/b2.npy"
     ]
     model = SimpleNN(784, 128, 10)
-
-    if any(os.path.exists(path) for path in paths_to_check):
+    train_anyway = True  # Set to True to train the model even if weights exist, False to load existing weights
+    if not train_anyway and any(os.path.exists(path) for path in paths_to_check):
         model.W1 = np.load("./weights/W1.npy")
         model.b1 = np.load("./weights/b1.npy")
         model.W2 = np.load("./weights/W2.npy")
